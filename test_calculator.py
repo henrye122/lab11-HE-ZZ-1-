@@ -11,43 +11,53 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(add(0, 0), 0)
 
     def test_subtract(self): # 3 assertions
-        self.assertEqual(sub(5, 3), 2)
-        self.assertEqual(sub(3, 5), -2)
-        self.assertEqual(sub(0, 0), 0)
+        self.assertEqual(subtract(5, 3), 2)
+        self.assertEqual(subtract(3, 5), -2)
+        self.assertEqual(subtract(0, 0), 0)
     ##########################
 
     ######## Partner 1
-    # def test_multiply(self):
-    #     fill in code
+    def test_multiply(self):  # 3 assertions
+        self.assertEqual(multiply(3, 4), 12)
+        self.assertEqual(multiply(-3, 4), -12)
+        self.assertEqual(multiply(0, 5), 0)
 
-    # def test_divide(self):
-    #     fill in code
+    def test_divide(self):  # 3 assertions
+        self.assertAlmostEqual(divide(2, 9), 4.5)
+        self.assertEqual(divide(-2, 6), -3)
+        self.assertEqual(divide(5, 0), 0)
     # ##########################
 
     ######## Partner 2
     def test_divide_by_zero(self): # 1 assertion
         with self.assertRaises(ZeroDivisionError):
-            div(0, 5)
+            divide(0, 5)
 
     def test_logarithm(self): # 3 assertions
-        self.assertAlmostEqual(log(2, 8), 3)
-        self.assertAlmostEqual(log(10, 100), 2)
-        self.assertAlmostEqual(log(3, 81), 4)
+        self.assertAlmostEqual(logarithm(2, 8), 3)
+        self.assertAlmostEqual(logarithm(10, 100), 2)
+        self.assertAlmostEqual(logarithm(3, 81), 4)
 
     def test_log_invalid_base(self): # 1 assertion
         with self.assertRaises(ValueError):
-            log(1, 10)
+            logarithm(1, 10)
     ##########################
 
     ######## Partner 1
-    # def test_log_invalid_argument(self):
-    #     fill in code
+    def test_log_invalid_argument(self):  # 1 assertion
+        with self.assertRaises(ValueError):
+            logarithm(2, 0)
 
-    # def test_hypotenuse(self):
-    #     fill in code
+    def test_hypotenuse(self):  # 3 assertions
+        self.assertAlmostEqual(hypotenuse(3, 4), 5)
+        self.assertAlmostEqual(hypotenuse(-5, 12), 13)
+        self.assertAlmostEqual(hypotenuse(0, 0), 0)
 
-    # def test_sqrt(self):
-    #     fill in code
+    def test_sqrt(self):  # 3 assertions
+        with self.assertRaises(ValueError):
+            square_root(-1)
+        self.assertAlmostEqual(square_root(2), 1.4142135623730951)
+        self.assertEqual(square_root(0), 0)
     ##########################
 
 if __name__ == "__main__":

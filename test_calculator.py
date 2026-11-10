@@ -1,4 +1,4 @@
-
+# https://github.com/henrye122/lab11-HE-ZZ-1-.git
 import unittest
 from calculator import *
 
@@ -18,20 +18,20 @@ class TestCalculator(unittest.TestCase):
 
     ######## Partner 1
     def test_multiply(self):  # 3 assertions
-        self.assertEqual(multiply(3, 4), 12)
-        self.assertEqual(multiply(-3, 4), -12)
-        self.assertEqual(multiply(0, 5), 0)
+        self.assertEqual(mul(3, 4), 12)
+        self.assertEqual(mul(-3, 4), -12)
+        self.assertEqual(mul(0, 5), 0)
 
     def test_divide(self):  # 3 assertions
-        self.assertAlmostEqual(divide(2, 9), 4.5)
-        self.assertEqual(divide(-2, 6), -3)
-        self.assertEqual(divide(5, 0), 0)
+        self.assertAlmostEqual(div(2, 9), 4.5)
+        self.assertEqual(div(-2, 6), -3)
+        self.assertEqual(div(5, 0), 0)
     # ##########################
 
     ######## Partner 2
     def test_divide_by_zero(self): # 1 assertion
         with self.assertRaises(ZeroDivisionError):
-            divide(0, 5)
+            div(0, 5)
 
     def test_logarithm(self): # 3 assertions
         self.assertAlmostEqual(logarithm(2, 8), 3)
